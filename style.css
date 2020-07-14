@@ -17,7 +17,7 @@ header {
   height: 80px;
 }
 
-a:hover {
+nav a:hover {
   color: #323144;
   border-bottom: 2px solid #323144;
 }
@@ -116,4 +116,46 @@ nav a {
   .main__card p {
     margin-bottom: 0 0 10px 0;
   }
+  .main__card-info a{
+    background-color: #323144;
+    text-decoration: none;
+    text-align: center;
+    color: #BABDCE;
+    padding: 9px 0;
+    border-radius: 10px;
+  }
+
+  /* Modal */
+  #modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__window {
+  position: relative;
+  width: 400px;
+  height: 550px;
+  background-color: white;
+  padding: 4em 2em;
+  border-radius: 20px;
+}
+
+.modal__close {
+  position: absolute;
+  top: -30px;
+  right: 0;
+}
+
+#modal:not(:target) {
+    visibility: hidden;
+    opacity: 0;
+}
+/* Fin de modal */
 }
