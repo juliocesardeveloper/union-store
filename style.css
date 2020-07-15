@@ -140,8 +140,8 @@ nav a {
 
 .modal__window {
   position: relative;
-  width: 400px;
-  height: 550px;
+  width: 350px;
+  height: 450px;
   background-color: white;
   padding: 4em 2em;
   border-radius: 20px;
