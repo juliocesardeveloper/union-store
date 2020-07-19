@@ -11,7 +11,7 @@
     <nav>
       <a href="/">Home</a>
       <a href="/">About</a>
-      <a href="/">Archive</a>
+      <a href="#modal__car">Carrito de compras</a>
     </nav>
   </header>
   <main>
@@ -29,14 +29,27 @@
       <dialog id="modal">
         <div class="modal__window">
           <a class="modal__close" href="#"><img src="./assets/cerrar-ventana-52.png" alt="Close-window"></a>
+          <img src="https://i.pinimg.com/564x/76/27/0b/76270b90abf5cdbee447f5d0676a00fd.jpg" alt="">
           <div class="modal__info">
             <h2>Producto 1</h2>
             <h3>$250.000</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptates velit veritatis amet, aperiam aspernatur.</p>
           </div>
           <div class="modal__buttons">
-            <button>Agregar a carrito</button>
-            
+            <button class="modal__buttons--car" type="button" onclick="#">Agregar a carrito</button>
+            <button class="modal__buttons--back" type="button" onclick="#">Seguir comprando</button>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog id="modal__car">
+        <div class="modal__car--window">
+          <a class="modal__car--close" href="#"><img src="./assets/cerrar-ventana-52.png" alt="Close-window"></a>
+          <div class="modal__car--info">
+            <h2>Carrito de compras</h2>
+          </div>
+          <div class="modal__car--buttons">
+            <button class="modal__buttons--car" type="button" onclick="#">Comprar</button>
           </div>
         </div>
       </dialog>

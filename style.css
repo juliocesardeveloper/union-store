@@ -5,6 +5,7 @@ body {
   color: #323144;
   font-family: "Nunito", sans-serif;
 }
+
 header {
   flex-direction: column;
 }
@@ -45,18 +46,29 @@ nav a {
 
 .main__card {
   display: flex;
-  margin: 40px;
+  margin: 20px;
   border-radius: 20px;
-  
 }
-
 .main__card img {
   display: block;
   width: 50%;
   height: auto;
   border-radius: 0 20px 20px 0;
 }
-
+.main__card h3 {
+  margin: 0;
+}
+.main__card p {
+  margin-top: 5px;
+}
+.main__card a {
+  background-color: #323144;
+  text-decoration: none;
+  text-align: center;
+  color: #BABDCE;
+  padding: 9px 0;
+  border-radius: 10px;
+}
 .main__card-info {
   width: auto;
   height: auto;
@@ -67,35 +79,155 @@ nav a {
   border-radius: 20px 0 0 20px;
   padding: 0 20px;
 }
-.main__card h3 {
-  margin: 0;
-}
-.main__card p {
-  margin-top: 5px;
-}
-.main__card button {
-  background-color: #323144;
+
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.modal__window {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 90%;
+  height: 90%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 20px;
+}
+.modal__window img {
+  width: 80%;
+  border-radius: 20px;
+  margin: 0;
+  align-self: center;
+  transform: rotate(-90deg);
+}
+
+.modal__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.modal__info h2,
+.modal__info h3,
+.modal__info a {
+  margin-bottom: 0;
+}
+
+.modal__close {
+  align-self: flex-end;
+}
+.modal__close img {
+  width: 30px;
+  border-radius: 10px;
+}
+
+.modal__buttons {
+  display: flex;
+}
+.modal__buttons button {
+  background-color: #323144;
+  width: 50%;
   height: 40px;
+  margin: 0 5px;
+  padding: 0 10px;
   border-radius: 10px;
   border-style: none;
   color: #BABDCE;
   font-family: "Nunito", sans-serif;
   outline: none;
+  justify-self: center;
+  align-self: center;
 }
 
+#modal:not(:target) {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Modal carro de compras mobile */
+#modal__car {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__car--window {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  background-color: white;
+  padding: 10px;
+  border-radius: 20px;
+}
+.modal__car--window a {
+  margin: 0;
+  align-self: flex-end;
+}
+.modal__car--window a img {
+  width: 30px;
+  border-radius: 10px;
+}
+.modal__car--window img {
+  width: 60%;
+  justify-self: center;
+  border-radius: 20px;
+  transform: rotate(-90deg);
+}
+.modal__car--window button {
+  background-color: #323144;
+  width: 50%;
+  height: 40px;
+  margin: 0 5px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border-style: none;
+  color: #BABDCE;
+  font-family: "Nunito", sans-serif;
+  outline: none;
+  justify-self: center;
+  align-self: center;
+}
+.modal__car--window .modal__car--info {
+  margin: 0 20px;
+}
+
+#modal__car:not(:target) {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Fin de modal carro de compras mobile */
 @media (min-width: 768px) {
   header {
     flex-direction: row;
     align-items: center;
   }
+
   header h1 {
     margin: 0;
   }
+
   .main__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
+
   .main__card {
     display: grid;
     width: 250px;
@@ -103,20 +235,20 @@ nav a {
     grid-template-rows: 1fr 1fr;
   }
   .main__card img {
-    grid-row: 1 / span 1;
+    grid-row: 1/span 1;
   }
-  .main__card img{
-    width: 100%;    
+  .main__card img {
+    width: 100%;
     border-radius: 20px 20px 0 0;
+  }
+  .main__card p {
+    margin-bottom: 0 0 10px 0;
   }
   .main__card-info {
     border-radius: 0 0 20px 20px;
     padding: 0 20px;
   }
-  .main__card p {
-    margin-bottom: 0 0 10px 0;
-  }
-  .main__card-info a{
+  .main__card-info a {
     background-color: #323144;
     text-decoration: none;
     text-align: center;
@@ -132,34 +264,118 @@ nav a {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.modal__window {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 350px;
-  height: 450px;
-  background-color: white;
-  padding: 10px;
-  border-radius: 20px;
-}
+  .modal__window {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 400PX;
+    height: 600PX;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  .modal__window a {
+    margin: 0;
+    align-self: flex-end;
+  }
+  .modal__window a img {
+    width: 30px;
+    border-radius: 10px;
+  }
+  .modal__window img {
+    width: 60%;
+    justify-self: center;
+    border-radius: 20px;
+    transform: rotate(-90deg);
+  }
+  .modal__window button {
+    background-color: #323144;
+    width: 50%;
+    height: 40px;
+    margin: 0 5px;
+    padding: 0 10px;
+    border-radius: 10px;
+    border-style: none;
+    color: #BABDCE;
+    font-family: "Nunito", sans-serif;
+    outline: none;
+    justify-self: center;
+    align-self: center;
+  }
+  .modal__window .modal__info {
+    margin: 0 20px;
+  }
 
-.modal__close {
-  align-self: flex-end;
-}
-.modal__close img {
-  width: 30px;
-  border-radius: 10px;
-}
-
-#modal:not(:target) {
+  #modal:not(:target) {
     visibility: hidden;
     opacity: 0;
-}
-/* Fin de modal */
+  }
+
+  /* Fin de modal */
+  /* Modal carro de compras */
+  #modal__car {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal__car--window {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: auto;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  .modal__car--window a {
+    margin: 0;
+    align-self: flex-end;
+  }
+  .modal__car--window a img {
+    width: 30px;
+    border-radius: 10px;
+  }
+  .modal__car--window img {
+    width: 60%;
+    justify-self: center;
+    border-radius: 20px;
+    transform: rotate(-90deg);
+  }
+  .modal__car--window button {
+    background-color: #323144;
+    width: 50%;
+    height: 40px;
+    margin: 0 5px;
+    padding: 0 10px;
+    border-radius: 10px;
+    border-style: none;
+    color: #BABDCE;
+    font-family: "Nunito", sans-serif;
+    outline: none;
+    justify-self: center;
+    align-self: center;
+  }
+  .modal__car--window .modal__car--info {
+    margin: 0 20px;
+  }
+
+  #modal__car:not(:target) {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  /* Fin de modal carro de compras */
 }
