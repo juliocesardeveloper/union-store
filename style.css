@@ -139,18 +139,22 @@ nav a {
 }
 
 .modal__window {
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 350px;
   height: 450px;
   background-color: white;
-  padding: 4em 2em;
+  padding: 10px;
   border-radius: 20px;
 }
 
 .modal__close {
-  position: absolute;
-  top: -30px;
-  right: 0;
+  align-self: flex-end;
+}
+.modal__close img {
+  width: 30px;
+  border-radius: 10px;
 }
 
 #modal:not(:target) {
